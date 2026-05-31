@@ -7,12 +7,12 @@ class Buttonscal extends StatelessWidget {
     required this.text,
     this.backgroundColor = Colors.black54,
 
-    //required this.callback
+    required this.callback,
   });
 
   final String text;
   final Color backgroundColor;
-  // final Function callback;
+  final Function callback;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,9 @@ class Buttonscal extends StatelessWidget {
         child: FloatingActionButton(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
           backgroundColor: backgroundColor,
-          onPressed: () {},
+          onPressed: () {
+            callback(text);
+          },
           child: Text(
             text,
             style: GoogleFonts.rubik(
